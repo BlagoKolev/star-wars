@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { HomeDto } from "src/modelsDto/homeDto";
+import { IHome } from "src/Interfaces/IHome";
 import { HomeService } from "src/services/home.service";
 
 @Component({
@@ -11,12 +11,12 @@ import { HomeService } from "src/services/home.service";
 export class HomeComponent implements OnInit {
     constructor(private homeService: HomeService) { }
 
-    data:any;
+    data: any;
 
-    ngOnInit(): HomeDto {
+    ngOnInit(): IHome {
         this.homeService.getData()
-        .subscribe(res => this.data = res)
-       
+            .subscribe(res => this.data = res)
+
         return this.data;
     }
 }

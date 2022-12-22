@@ -1,0 +1,9 @@
+<h2>Starships</h2>
+<!-- <h3 *ngIf="shipsFirstPage==null">Loading...</h3> -->
+<ul class="star-ships">
+    <li class="ship-list"><button (click)="getShips(1)">Starships List 1</button></li>
+    <li class="ship-list"><button (click)="getShips(2)">Starships List 2</button></li>
+    <li class="ship-list"><button (click)="getShips(3)">Starships List 3</button></li>
+    <li class="ship-list"><button (click)="getShips(4)">Starships List 4</button></li>
+</ul>
+<ship-list [ships]="ships.results"></ship-list>

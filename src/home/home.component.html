@@ -1,9 +1,11 @@
 <div *ngIf="data==null">Loading...</div>
 <div class="container">
+    
     <h4>{{data?.films}}</h4>
     <h4>{{data?.people}}</h4>
     <h4>{{data?.planets}}</h4>
     <h4>{{data?.species}}</h4>
-    <h4>{{data?.starships}}</h4>
-    <h4>{{data?.vehicles}}</h4>
+    <!-- <h4>{{data?.starships}}</h4> -->
+    <a routerLink="/ships">Starships</a>
+    <h4>{{data?.vehicles }}</h4>
 </div>
