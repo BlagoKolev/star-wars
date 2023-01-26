@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-// import { IShip } from "src/Interfaces/IShip";
+import { IShip } from "src/Interfaces/IShip";
 import { ShipService } from "src/services/ship.service";
 
 @Component({
@@ -10,7 +10,7 @@ import { ShipService } from "src/services/ship.service";
 })
 export class ShipsComponent {
     constructor(private shipService: ShipService) { }
-
+    
     ships: any;
 
     getShips(list: number) {

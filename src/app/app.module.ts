@@ -5,10 +5,10 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from 'src/home/home.component';
+import { HomeComponent } from 'src/app/components/home/home.component';
 import { Url } from 'src/constants/url';
-import { ShipsComponent } from 'src/ships/ship.component';
-import { ShipListComponent } from 'src/ships/ship.list.component';
+import { ShipsComponent } from 'src/app/components/ships/ship.component';
+import { ShipListComponent } from 'src/app/components/ships/ship.list.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
