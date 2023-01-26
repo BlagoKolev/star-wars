@@ -1,11 +1,17 @@
 <div *ngIf="data==null">Loading...</div>
-<div class="container">
-    
-    <h4>{{data?.films}}</h4>
-    <h4>{{data?.people}}</h4>
-    <h4>{{data?.planets}}</h4>
-    <h4>{{data?.species}}</h4>
+<h3 *ngIf="data">Here you can check everything about Star-Wars saga separated by category</h3>
+<div *ngIf="data" class="container">
+    <!-- <h4>{{data?.films}}</h4> -->
+    <!-- <h4>{{data?.people}}</h4> -->
+    <!-- <h4>{{data?.planets}}</h4> -->
+    <!-- <h4>{{data?.species}}</h4> -->
     <!-- <h4>{{data?.starships}}</h4> -->
-    <a routerLink="/ships">Starships</a>
-    <h4>{{data?.vehicles }}</h4>
+    <!-- <h4>{{data?.vehicles }}</h4> -->
+    <a routerLink="/movies"><button class="links">Movies</button></a>
+    <a routerLink="/people"><button class="links">People</button></a>
+    <a routerLink="/planets"><button class="links">Planets</button></a>
+    <a routerLink="/species"><button class="links">Species</button></a>
+    <a routerLink="/ships"><button class="links">Starships</button></a>
+    <a routerLink="/vehicles"><button class="links">Vehicles</button></a>
 </div>
+

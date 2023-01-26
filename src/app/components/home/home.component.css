@@ -1,3 +1,14 @@
 .container {
     display: flex;
+    justify-content: space-evenly;
+}
+
+h3 {
+    text-align: center;
+}
+
+button:hover {
+    background-color: chartreuse;
+    cursor: pointer;
+    transform: scale(1.5);
 }
