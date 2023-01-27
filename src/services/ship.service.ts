@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IShip } from '../Interfaces/IShip';
 import { Url } from '../constants/url';
+import { Observable } from 'rxjs';
+import { IShipsList } from 'src/Interfaces/IShipsList';
 
 @Injectable()
 export class ShipService {
@@ -20,4 +22,7 @@ export class ShipService {
         return this.httpClient.get(this.address);
     }
 
+    getShipByUrl(url: string) {
+        return this.httpClient.get(url);
+    }
 }

@@ -1,5 +1,7 @@
-import { Component } from "@angular/core";
+import { ThisReceiver } from "@angular/compiler";
+import { Component, OnInit } from "@angular/core";
 import { IShip } from "src/Interfaces/IShip";
+import { IShipsList } from "src/Interfaces/IShipsList";
 import { ShipService } from "src/services/ship.service";
 
 @Component({
@@ -8,13 +10,30 @@ import { ShipService } from "src/services/ship.service";
     templateUrl: 'ship.component.html',
     styleUrls: ['./ship.component.css']
 })
-export class ShipsComponent {
+export class ShipsComponent implements OnInit {
     constructor(private shipService: ShipService) { }
-    
-    ships: any;
 
-    getShips(list: number) {
-        this.shipService.getShipsByPage(list)
-            .subscribe(res => this.ships = res)
+    ships!: IShipsList;
+
+    ngOnInit(): void {
+        this.shipService.getShipsByPage(1)
+            .subscribe(result => this.ships = result as IShipsList);
+
     }
+
+    getShips(pageNumber: number) {
+        this.shipService.getShipsByPage(pageNumber)
+        .subscribe(result => this.ships = result as IShipsList);
+    }
+
+    getCurrentShip(shipUrl:string){
+        
+    }
+    
+
 }
+
+
+
+
+
