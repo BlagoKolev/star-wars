@@ -12,3 +12,36 @@
         <li class="ship-list"><button (click)="getShips(4)">Starships List 4</button></li>
     </ul>
 </div>
+
+<div *ngIf="ship">
+    <hr>
+    <h3>Starship Overview</h3>
+    <div class="ship-description">
+        <h4>name: {{ship.name}}</h4>
+        <h4>model: {{ship.model}}</h4>
+        <h4>manufacturer: {{ship.manufacturer}}</h4>
+        <h4>cost_in_credits: {{ship.cost_in_credits}}</h4>
+        <h4>length: {{ship.manufacturer}}</h4>
+        <h4>max_atmosphering_speed: {{ship.max_atmosphering_speed}}</h4>
+        <h4>crew: {{ship.crew}}</h4>
+        <h4>passengers: {{ship.passengers}}</h4>
+        <h4>cargo_capacity: {{ship.cargo_capacity}}</h4>
+        <h4>consumables: {{ship.consumables}}</h4>
+        <h4>hyperdrive_rating: {{ship.hyperdrive_rating}}</h4>
+        <h4>MGLT: {{ship.MGLT}}</h4>
+        <h4>starship_class: {{ship.starship_class}}</h4>
+        <h4>pilots: 
+            <h4 *ngFor="let pilot of ship.pilots">--{{pilot}}</h4>
+        </h4>
+        <h4>movies: 
+            <h4 *ngFor="let film of ship.films">--{{film}}</h4>
+        </h4>
+    </div>
+</div>
+
+
+			
+			
+			
+			
+	

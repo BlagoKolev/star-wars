@@ -8,7 +8,12 @@
     list-style-type: none;
 }
 
-h2 {
+.ship-list :hover{
+    cursor: pointer;
+    background-color: burlywood;
+}
+
+h2, h3 {
     text-align: center;
 }
 

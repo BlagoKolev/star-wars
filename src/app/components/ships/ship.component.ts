@@ -14,6 +14,8 @@ export class ShipsComponent implements OnInit {
     constructor(private shipService: ShipService) { }
 
     ships!: IShipsList;
+    ship!: IShip;
+
 
     ngOnInit(): void {
         this.shipService.getShipsByPage(1)
@@ -23,13 +25,14 @@ export class ShipsComponent implements OnInit {
 
     getShips(pageNumber: number) {
         this.shipService.getShipsByPage(pageNumber)
-        .subscribe(result => this.ships = result as IShipsList);
+            .subscribe(result => this.ships = result as IShipsList);
     }
 
-    getCurrentShip(shipUrl:string){
-        
+    getCurrentShip(shipUrl: string) {
+        this.shipService.getShipByUrl(shipUrl)
+            .subscribe(result => {this.ship = result as IShip; console.log(result)});
     }
-    
+
 
 }
 
