@@ -1,0 +1,29 @@
+.star-ships {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.ship-list {
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.ship-list :hover{
+    cursor: pointer;
+    background-color: blueviolet;
+}
+
+h2, h3 {
+    text-align: center;
+}
+
+.ship-name {
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.ship-name:hover {
+    cursor: pointer;
+    color:blueviolet;
+
+}

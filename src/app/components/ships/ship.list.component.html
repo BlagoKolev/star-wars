@@ -1,4 +1,15 @@
-<p >List of ships</p>
-<ul>
-    <li *ngFor="let ship of ships">{{ship}}</li>
-</ul>
+<h3 *ngIf="!ships">Loading...</h3>
+<div *ngIf="ships">
+    <h2>There are {{ships.count}} starships in the Star-Wars saga </h2>
+
+    <ul>
+        <li class="ship-name" *ngFor="let ship of ships.results" (click)="getCurrentShip(ship.url)">{{ship.name}}</li>
+    </ul>
+    <ul class="star-ships">
+        <li class="ship-list"><button (click)="getShips(1)">Starships List 1</button></li>
+        <li class="ship-list"><button (click)="getShips(2)">Starships List 2</button></li>
+        <li class="ship-list"><button (click)="getShips(3)">Starships List 3</button></li>
+        <li class="ship-list"><button (click)="getShips(4)">Starships List 4</button></li>
+    </ul>
+</div>
+<ship [ship]="ship"></ship>
