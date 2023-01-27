@@ -12,6 +12,7 @@ export class MoviesComponent implements OnInit {
     constructor(private moviesService: MoviesService) { }
 
     movies!: IMoviesList;
+    imagePath:string ='assets/images/movies/movie';
 
     ngOnInit(): void {
         this.moviesService.getMovies()

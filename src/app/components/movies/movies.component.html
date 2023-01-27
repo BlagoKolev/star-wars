@@ -1,7 +1,12 @@
-<div *ngIf="!movies"><h3>Loading...</h3></div>
+<div *ngIf="!movies">
+    <h3>Loading...</h3>
+</div>
 <div *ngIf="movies">
     <h3>Star-Wars saga has {{movies.count}} epic films</h3>
     <ul>
-        <li class="movie-name" *ngFor="let movie of movies.results">{{movie.title}}</li>
+        <li class="movie-name" *ngFor="let movie of movies.results; let i=index">
+            <h4>{{movie.title}}</h4>
+            <img [src]="imagePath + (i+1) + '.jpg'" alt="movie-poster" />
+        </li>
     </ul>
 </div>
