@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { IShip } from '../Interfaces/IShip';
 import { Url } from '../constants/url';
-import { Observable } from 'rxjs';
-import { IShipsList } from 'src/Interfaces/IShipsList';
+
 
 @Injectable()
 export class ShipService {

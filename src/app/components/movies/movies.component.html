@@ -1,0 +1,7 @@
+<div *ngIf="!movies"><h3>Loading...</h3></div>
+<div *ngIf="movies">
+    <h3>Star-Wars saga has {{movies.count}} epic films</h3>
+    <ul>
+        <li class="movie-name" *ngFor="let movie of movies.results">{{movie.title}}</li>
+    </ul>
+</div>

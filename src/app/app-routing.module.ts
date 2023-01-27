@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { MoviesComponent } from './components/movies/movies.component';
 import { ShipListComponent } from './components/ships/ship.list.component';
 
 const routes: Routes = [
-  {path:'ships', component: ShipListComponent}
+  {path:'ships', component: ShipListComponent},
+  {path:'movies', component: MoviesComponent}
+
 ];
 
 @NgModule({

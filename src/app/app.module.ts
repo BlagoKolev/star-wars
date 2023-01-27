@@ -9,10 +9,12 @@ import { HomeComponent } from 'src/app/components/home/home.component';
 import { Url } from 'src/constants/url';
 import { ShipsComponent } from 'src/app/components/ships/ship.component';
 import { ShipListComponent } from 'src/app/components/ships/ship.list.component';
+import { MoviesComponent } from './components/movies/movies.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'ships', component: ShipsComponent }
+  { path: 'ships', component: ShipListComponent },
+  { path: 'movies', component: MoviesComponent }
 ]
 
 @NgModule({
@@ -20,11 +22,12 @@ const routes: Routes = [
     AppComponent,
     HomeComponent,
     ShipsComponent,
-    ShipListComponent
+    ShipListComponent,
+    MoviesComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    // AppRoutingModule,
     HttpClientModule,
     RouterModule.forRoot(routes, { enableTracing: true }),
   ],

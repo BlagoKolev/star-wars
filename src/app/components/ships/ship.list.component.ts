@@ -7,9 +7,9 @@ import { ShipService } from 'src/services/ship.service';
     selector: 'ship-list',
     templateUrl: './ship.list.component.html',
     styleUrls: ['./ship.list.component.css'],
-    providers:[ShipService]
+    providers: [ShipService]
 })
-export class ShipListComponent implements OnInit{
+export class ShipListComponent implements OnInit {
     constructor(private shipService: ShipService) { }
 
     ships!: IShipsList;
@@ -29,7 +29,7 @@ export class ShipListComponent implements OnInit{
 
     getCurrentShip(shipUrl: string) {
         this.shipService.getShipByUrl(shipUrl)
-            .subscribe(result => {this.ship = result as IShip; console.log(result)});
+            .subscribe(result => { this.ship = result as IShip; console.log(result) });
     }
 
 
