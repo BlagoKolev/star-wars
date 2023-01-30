@@ -1,0 +1,41 @@
+<div *ngIf="movie">
+    <hr>
+    <div>
+        <h2 class="text-center">{{movie.title}}</h2>
+        <h4 class="text-center">episode: <span>{{movie.episode_id}}</span> </h4>
+        <h4 class="text-center">director: <span>{{movie.director}}</span> </h4>
+        <h4 class="text-center">producer: <span>{{movie.producer}}</span> </h4>
+        <h4 class="text-center">release date: <span>{{movie.release_date}}</span> </h4>
+        <h4 class="text-center">description: <span>{{movie.opening_crawl}}</span></h4>
+    </div>
+
+    <div class="characters">
+        <h3>Characters</h3>
+        <table>
+            <tr *ngFor="let char of movie.characters">
+                <td>name:</td>
+                <td [hero]="getHero()">Luke Skywalker</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+
+
+<!-- export interface IMovie {
+   + +title: string,
+   + episode_id: number,
+   + opening_crawl: string,
+   + director: string,
+   + producer: string,
+    release_date: string,
+    characters: [],
+    planets: [],
+    starships: [],
+    vehicles: [],
+    species: [],
+    created: string,
+    edited: string,
+    url: string
+} -->

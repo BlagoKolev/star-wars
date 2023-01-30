@@ -1,8 +1,50 @@
+body {
+    box-sizing: border-box;
+}
+
 h3 {
     text-align: center;
 }
 
 .movie-name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 400px;
     text-decoration: none;
     list-style-type: none;
+}
+
+.movie-name:hover {
+    cursor: pointer;
+}
+
+img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+.movie-container {
+    display: flex;
+    align-items: center;
+    height: 600px;
+}
+
+.img-container {
+    width: auto;
+    height: 300px;
+}
+
+img {
+    border: 1px solid #ddd;
+    /* Gray border */
+    border-radius: 4px;
+    /* Rounded border */
+    padding: 5px;
+    /* Some padding */
+    width: 250px;
+}
+
+a:hover {
+    cursor: pointer;
 }

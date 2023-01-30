@@ -10,6 +10,7 @@ import { Url } from 'src/constants/url';
 import { ShipsComponent } from 'src/app/components/ships/ship.component';
 import { ShipListComponent } from 'src/app/components/ships/ship.list.component';
 import { MoviesComponent } from './components/movies/movies.component';
+import { MovieComponent } from './components/movies/movie.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -23,7 +24,8 @@ const routes: Routes = [
     HomeComponent,
     ShipsComponent,
     ShipListComponent,
-    MoviesComponent
+    MoviesComponent,
+    MovieComponent
   ],
   imports: [
     BrowserModule,

@@ -3,10 +3,13 @@
 </div>
 <div *ngIf="movies">
     <h3>Star-Wars saga has {{movies.count}} epic films</h3>
-    <ul>
-        <li class="movie-name" *ngFor="let movie of movies.results; let i=index">
+    <ul class="movie-container">
+        <li class="movie-name" *ngFor="let movie of movies.results; let i=index" (click)="getMovieInfo(i)">
             <h4>{{movie.title}}</h4>
-            <img [src]="imagePath + (i+1) + '.jpg'" alt="movie-poster" />
+            <div class="img-container">
+                <img [src]="imagePath + (i+1) + '.jpg'" alt="movie-poster" />
+            </div>
         </li>
     </ul>
 </div>
+<movie [movie]="currentMovie"></movie>

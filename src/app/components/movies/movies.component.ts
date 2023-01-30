@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import { IMovie } from 'src/Interfaces/IMovie';
 import { IMoviesList } from 'src/Interfaces/IMoviesList';
 import { MoviesService } from 'src/services/movies.service';
 
@@ -12,10 +13,15 @@ export class MoviesComponent implements OnInit {
     constructor(private moviesService: MoviesService) { }
 
     movies!: IMoviesList;
-    imagePath:string ='assets/images/movies/movie';
+    currentMovie!: IMovie;
+    imagePath: string = 'assets/images/movies/movie';
 
     ngOnInit(): void {
         this.moviesService.getMovies()
-        .subscribe(result => this.movies=result as IMoviesList);
+            .subscribe(result => this.movies = result as IMoviesList);
+    }
+
+    getMovieInfo(epizode: number) {
+        return this.currentMovie = this.movies.results[epizode];
     }
 }
