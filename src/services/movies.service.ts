@@ -9,4 +9,8 @@ export class MoviesService {
     getMovies(){
         return this.httpClient.get(this.url.moviesUrl);
     }
+
+    getCurrentMovieData(url :string){
+        return this.httpClient.get(url);
+    }
 }

@@ -12,4 +12,6 @@ export class Url {
     shipsFourthPage: string = 'https://swapi.dev/api/starships/?page=4'
 
     moviesUrl: string = 'https://swapi.dev/api/films';
+
+    charactersPageUrl: string = 'https://swapi.dev/api/people/?page=';
 }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import { IMovie } from 'src/Interfaces/IMovie';
 import { IMoviesList } from 'src/Interfaces/IMoviesList';
 import { MoviesService } from 'src/services/movies.service';
-
+import { tap, switchMap } from 'rxjs';
 @Component({
     selector: 'movies',
     templateUrl: './movies.component.html',

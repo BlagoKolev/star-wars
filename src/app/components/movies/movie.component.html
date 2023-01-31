@@ -11,12 +11,11 @@
 
     <div class="characters">
         <h3>Characters</h3>
-        <table>
-            <tr *ngFor="let char of movie.characters">
-                <td>name:</td>
-                <td [hero]="getHero()">Luke Skywalker</td>
-            </tr>
-        </table>
+        <ul>
+            <li *ngFor="let char of movie.characters" >{{char}}</li>
+        </ul>
+        
+        
     </div>
 </div>
 

@@ -11,11 +11,15 @@ import { ShipsComponent } from 'src/app/components/ships/ship.component';
 import { ShipListComponent } from 'src/app/components/ships/ship.list.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { MovieComponent } from './components/movies/movie.component';
+import { CharactersService } from 'src/services/character.service';
+import { FormsModule } from '@angular/forms';
+import { CharactersComponent } from './components/characters/characters.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'ships', component: ShipListComponent },
-  { path: 'movies', component: MoviesComponent }
+  { path: 'movies', component: MoviesComponent },
+  { path: 'characters', component: CharactersComponent }
 ]
 
 @NgModule({
@@ -25,15 +29,20 @@ const routes: Routes = [
     ShipsComponent,
     ShipListComponent,
     MoviesComponent,
-    MovieComponent
+    MovieComponent,
+    CharactersComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     // AppRoutingModule,
     HttpClientModule,
     RouterModule.forRoot(routes, { enableTracing: true }),
   ],
-  providers: [Url],
+  providers: [
+    Url,
+    CharactersService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
