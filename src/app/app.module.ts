@@ -14,6 +14,7 @@ import { MovieComponent } from './components/movies/movie.component';
 import { CharactersService } from 'src/services/character.service';
 import { FormsModule } from '@angular/forms';
 import { CharactersComponent } from './components/characters/characters.component';
+import { CharacterComponent } from './components/characters/character.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -30,7 +31,8 @@ const routes: Routes = [
     ShipListComponent,
     MoviesComponent,
     MovieComponent,
-    CharactersComponent
+    CharactersComponent,
+    CharacterComponent
   ],
   imports: [
     BrowserModule,

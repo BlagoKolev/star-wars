@@ -7,7 +7,7 @@ export interface ICharacter {
     eye_color: string,
     birth_year: string,
     gender: string,
-    homeworld: string,
+    homeworld: {},
     films: string[],
     species: string[],
     vehicles: string[],

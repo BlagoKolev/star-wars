@@ -3,6 +3,7 @@ import { ICharacter } from "src/Interfaces/ICharacter";
 import { ICharactersPageModel } from "src/Interfaces/ICharactersPageModel";
 import { CharactersService } from "src/services/character.service";
 import { Url } from "src/constants/url";
+import { Observable, switchMap, tap, map } from "rxjs";
 
 @Component({
     selector: 'characters',
@@ -14,6 +15,7 @@ export class CharactersComponent implements OnInit {
 
     characters!: ICharactersPageModel;
     pageNumber: number = 1;
+    currentCharacter!: ICharacter;
 
     ngOnInit(): void {
         this.loadPageData(1);
@@ -32,5 +34,19 @@ export class CharactersComponent implements OnInit {
         this.characterService
             .getAllCharactersByPage(this.urlConstants.charactersPageUrl + (this.pageNumber))
             .subscribe(characters => this.characters = characters as ICharactersPageModel)
+    }
+
+    loadCharacterInfo(index: number) {
+        let characterId = ((this.pageNumber * this.urlConstants.charactersPerPage) - 10 + index + 1);
+        if (characterId >= 17) {
+            characterId++;
+        } //That is because Id=17 is missing in Api Database.
+
+        this.characterService.getCharacter(this.urlConstants.characterPersonalUrl + characterId)
+            .pipe(
+                switchMap(character => this.characterService.getCharacter('https://swapi.dev/api/planets/8/')
+                    .pipe(map(homeworld => ({ ...character, homeworld }))
+                    )),
+            ).subscribe(character => this.currentCharacter = character as ICharacter);
     }
 }

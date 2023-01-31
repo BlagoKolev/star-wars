@@ -14,4 +14,6 @@ export class Url {
     moviesUrl: string = 'https://swapi.dev/api/films';
 
     charactersPageUrl: string = 'https://swapi.dev/api/people/?page=';
+    characterPersonalUrl: string = 'https://swapi.dev/api/people/';
+    charactersPerPage: number = 10;
 }

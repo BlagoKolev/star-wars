@@ -1,12 +1,15 @@
 <h3 *ngIf="!characters">Loading...</h3>
 <div *ngIf="characters" class="container">
     <h2>Here is a full list of {{characters.count}} Characters involved in a Star-Wars saga</h2>
-  <ul>
-    <li *ngFor="let char of characters.results"><h3>{{char.name}}</h3></li>
-  </ul>
+    <ul>
+        <li class="char-name" *ngFor="let char of characters.results; let i = index" (click)="loadCharacterInfo(i)">
+            <h3>{{char.name}}</h3>
+        </li>
+    </ul>
     <div class="pagination">
-        <button [disabled]="!characters.previous" (click)="loadPreviousPage()">Back</button>
-        <span>Page: {{pageNumber}}</span>
-        <button [disabled]="!characters.next" (click)="loadNextPage()">Next</button>
+        <button class="pagination-btn" [disabled]="!characters.previous" (click)="loadPreviousPage()">Back</button>
+        <span class="pagination-page">Page: {{pageNumber}}</span>
+        <button class="pagination-btn" [disabled]="!characters.next" (click)="loadNextPage()">Next</button>
     </div>
 </div>
+<character [character]="currentCharacter"></character>
