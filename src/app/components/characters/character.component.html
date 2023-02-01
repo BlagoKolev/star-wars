@@ -1,4 +1,13 @@
-<div *ngIf="character">
-<hr>
-<p>{{character.homeworld}}</p>
+<div class="container" *ngIf="character">
+    <hr>
+    <h4>name: <span>{{character.name}}</span></h4>
+    <h4>height: <span>{{character.height}}</span></h4>
+    <h4>mass: <span>{{character.mass}}</span></h4>
+    <h4>hair color: <span>{{character.hair_color}}</span></h4>
+    <h4>skin color: <span>{{character.skin_color}}</span></h4>
+    <h4>eye color: <span>{{character.eye_color}}</span></h4>
+    <h4>year of birth: <span>{{character.birth_year}}</span></h4>
+    <h4> gender: <span>{{character.gender}}</span></h4>
+    <h4> homeworld: <span>{{character.homeworld.name}}</span></h4>
+    <p></p>
 </div>

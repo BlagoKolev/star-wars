@@ -1,3 +1,5 @@
+import { IPlanet } from "./IPlanet";
+
 export interface ICharacter {
     name: string,
     height: number,
@@ -7,7 +9,7 @@ export interface ICharacter {
     eye_color: string,
     birth_year: string,
     gender: string,
-    homeworld: {},
+    homeworld: IPlanet,
     films: string[],
     species: string[],
     vehicles: string[],

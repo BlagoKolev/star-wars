@@ -36,7 +36,7 @@ export class CharactersComponent implements OnInit {
             .subscribe(characters => this.characters = characters as ICharactersPageModel)
     }
 
-    loadCharacterInfo(index: number) {
+    loadCharacterInfo(index: number, homeworld:string) {
         let characterId = ((this.pageNumber * this.urlConstants.charactersPerPage) - 10 + index + 1);
         if (characterId >= 17) {
             characterId++;
@@ -44,7 +44,7 @@ export class CharactersComponent implements OnInit {
 
         this.characterService.getCharacter(this.urlConstants.characterPersonalUrl + characterId)
             .pipe(
-                switchMap(character => this.characterService.getCharacter('https://swapi.dev/api/planets/8/')
+                switchMap(character => this.characterService.getCharacter(homeworld)
                     .pipe(map(homeworld => ({ ...character, homeworld }))
                     )),
             ).subscribe(character => this.currentCharacter = character as ICharacter);

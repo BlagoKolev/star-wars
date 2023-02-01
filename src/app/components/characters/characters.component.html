@@ -2,7 +2,7 @@
 <div *ngIf="characters" class="container">
     <h2>Here is a full list of {{characters.count}} Characters involved in a Star-Wars saga</h2>
     <ul>
-        <li class="char-name" *ngFor="let char of characters.results; let i = index" (click)="loadCharacterInfo(i)">
+        <li class="char-name" *ngFor="let char of characters.results; let i = index" (click)="loadCharacterInfo(i, char.homeworld.toString())">
             <h3>{{char.name}}</h3>
         </li>
     </ul>
